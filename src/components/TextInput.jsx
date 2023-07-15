@@ -4,7 +4,7 @@ import React from "react"
 // eslint-disable-next-line react/prop-types
 const TextInput = ({title, state, setState, max}) => {
   return (
-    <React.Fragment>
+    <>
       <span className="title"> {title} </span>
         <input 
           type="number" 
@@ -14,7 +14,7 @@ const TextInput = ({title, state, setState, max}) => {
           min={0}
           max={max}
         />
-    </React.Fragment>
+    </>
   )
 }
 

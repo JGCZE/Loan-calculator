@@ -12,7 +12,6 @@ const Sliders = ({title, state, min, max, onChange, labelMin, labelMax, underlin
                 style={{textDecoration: "underline"}}
             >
                 {underlineTitle}
-            
         </span>
       )}
       <div>

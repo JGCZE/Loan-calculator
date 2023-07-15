@@ -66,8 +66,6 @@ const App = () => {
     setDownPayment(dp)
   }
 
-
-
   return (
     <div className="App">
       <h3>
