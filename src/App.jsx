@@ -93,7 +93,7 @@ const App = () => {
 
       <Sliders
         title="Akontace"
-        underlineTitle={`Celková akontace v procentech - ${numberFormat(Math.ceil(calculateDP(emi) / cost * 100))} %`}
+        underlineTitle={`Celková akontace v procentech - ${numberFormat(calculateDP(emi))}`}
         onChange={updateEMI}
         state={calculateDP(emi)}
         min={0}
