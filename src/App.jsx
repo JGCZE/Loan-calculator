@@ -11,6 +11,7 @@ const App = () => {
   const [downPayment, setDownPayment] = useState(0)
   const [tenure, setTenure] = useState(12)
   const [emi, setEmi] = useState(0)
+  const [percent, setPercent] = useState(0)
 
   const calculateEMI = (downPayment) => {
     // emi amount = [P x R x (1+R)^N]/[(1+R)^N-1]
@@ -49,7 +50,7 @@ const App = () => {
 
     const dp = Number(e.target.value)
     setDownPayment(dp.toFixed(0))
-
+    
     //calculate emi and update it
     const emi = calculateEMI(dp)
     setEmi(emi)
@@ -65,6 +66,7 @@ const App = () => {
     const dp = calculateDP(emi)
     setDownPayment(dp)
   }
+
 
   return (
     <div className="App">
@@ -91,9 +93,9 @@ const App = () => {
 
       <Sliders
         title="Akontace"
-        underlineTitle={`Celková výše akontace - ${numberFormat(calculateDP(emi))}`}
+        underlineTitle={`Celková akontace v procentech - ${numberFormat(Math.ceil(calculateDP(emi) / cost * 100))} %`}
         onChange={updateEMI}
-        state={downPayment}
+        state={calculateDP(emi)}
         min={0}
         max={cost}
         labelMin={"0%"}
